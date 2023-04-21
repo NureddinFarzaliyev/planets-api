@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+require('dotenv').config();
+
 const fs = require('fs')
 
 app.get('/', (req, res) => {
@@ -11,7 +13,7 @@ app.get('/', (req, res) => {
     })
 })
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server listening: ${port}`);
 });
